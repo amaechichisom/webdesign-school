@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Scientific Calculator</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+	<h1>Scientific Calculator</h1>
+
+
+
+	<div id="calculator">
+		
+		<div id="led">
+			<div id="oldInput"></div>
+
+			<div id="newInput"></div>
+		</div>
+
+		<div class="buttonRow">
+			<div class="buttonPanel">
+				<div id="buttons">
+					<div>
+						<input onclick="btnclick(this.id)" type="button" class="specialButton" id="" value="Inv">
+						<input onclick="btnclick(this.id)" type="button" class="specialButton" id="" value="In">
+						<input onclick="btnclick(this.id)" type="button" class="specialButton" id="" value="(">
+						<input onclick="btnclick(this.id)" type="button" class="specialButton" id="" value=")">
+					</div>
+					<div>
+						<input onclick="btnclick(this.id)" type="button" class="specialButton" id="sin-inv" value="sin^-1">
+						<input onclick="btnclick(this.id)" type="button" class="specialButton" id="sin" value="sin">
+						<input onclick="btnclick(this.id)" type="button" class="specialButton" id="square" value="x^2">
+						<input onclick="btnclick(this.id)" type="button" class="specialButton" id="factorial" value="n!">
+					</div>
+					<div>
+						
+						<input onclick="btnclick(this.id)" type="button" class="specialButton" id="cos-inv" value="cos^-1">
+						<input onclick="btnclick(this.id)" type="button" class="specialButton" id="cos" value="cos">
+						<input onclick="btnclick(this.id)" type="button" class="specialButton" id="power" value="x^y">
+						<input onclick="btnclick(this.id)" type="button" class="specialButton" id="inverse" value="y&radic;x">
+					</div>
+					<div>
+						<input onclick="btnclick(this.id)" type="button" class="specialButton" id="tan-inv" value="tan^-1">
+						<input onclick="btnclick(this.id)" type="button" class="specialButton" id="tan" value="tan">
+						<input onclick="btnclick(this.id)" type="button" class="specialButton" id="cube" value="x^3">
+						<input onclick="btnclick(this.id)" type="button" class="specialButton" id="cube-root" value="&#8731;">
+
+					</div>
+					<div>
+						<input onclick="btnclick(this.id)" type="button" class="specialButton" id="exp" value="Exp">
+						<input onclick="btnclick(this.id)" type="button" class="operatorButton" id="modulus" value="Mod">
+						<input onclick="btnclick(this.id)" type="button" class="specialButton" id="log" value="log">
+						<input onclick="btnclick(this.id)" type="button" class="specialButton" id="log-In" value="In">
+					</div>
+				</div>
+			</div>
+
+			<div class="buttonPanel">
+				
+				<div id="buttons">
+					<div>
+						<input onclick="btnclick(this.id)" type="button" class="clearButton" id="clr1" value="&#8592;">
+						<input onclick="btnclick(this.id)" type="button" class="clearButton" id="clr2" value="CE">
+						<input onclick="btnclick(this.id)" type="button" class="clearButton" id="clr3" value="C">
+
+						<input onclick="btnclick(this.id)" type="button" class="operatorButton" id="sign" value="
+						">
+
+						<input onclick="btnclick(this.id)" type="button" class="specialButton" id="sqrt-root" value="&radic;">
+					</div>
+					<div>
+						<input onclick="btnclick(this.id)" type="button" class="numberButton" id="no7" value="7">
+						<input onclick="btnclick(this.id)" type="button" class="numberButton" id="no8" value="8">
+						<input onclick="btnclick(this.id)" type="button" class="numberButton" id="no9" value="9">
+
+						<input onclick="btnclick(this.id)" type="button" class="operatorButton" id="divide" value="/">
+
+						<input onclick="btnclick(this.id)" type="button" class="specialButton" id="percentage" value="%">
+					</div>
+					<div>
+						<input onclick="btnclick(this.id)" type="button" class="numberButton" id="no4" value="4">
+						<input onclick="btnclick(this.id)" type="button" class="numberButton" id="no5" value="5">
+						<input onclick="btnclick(this.id)" type="button" class="numberButton" id="no6" value="6">
+
+						<input onclick="btnclick(this.id)" type="button" class="operatorButton" id="times" value="*">
+
+						<input onclick="btnclick(this.id)" type="button" class="specialButton" id="reciproc" value="1/x">
+					</div>
+					<div>
+						<input onclick="btnclick(this.id)" type="button" class="numberButton" id="no1" value="1">
+						<input onclick="btnclick(this.id)" type="button" class="numberButton" id="no2" value="2">
+						<input onclick="btnclick(this.id)" type="button" class="numberButton" id="no3" value="3">
+
+						<input onclick="btnclick(this.id)" type="button" class="operatorButton" id="minus" value="-">
+						<input onclick="btnclick(this.id)" type="button" class="specialButton" id="inverse" value="&Pi;">
+					</div>
+					<div>
+						<input onclick="btnclick(this.id)" type="button" class="numberButton" id="no0" value="0">
+						<input onclick="btnclick(this.id)" type="button" class="numberButton" id="decimal" value=".">
+
+						<input onclick="btnclick(this.id)" type="button" class="operatorButton" id="plus" value="+">
+						<input onclick="btnclick(this.id)" type="button" class="equalsButton" id="equals" value="=">
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<script src="js/calc.js"></script>
+
+	<script>
+
+		// function el (element) {
+		// 	if (element.charAt(0) === "#") { // If passed an ID...
+		// 		return document.querySelector(element); // ... returns single element
+		// 	}
+
+		// 	return document.querySelectorAll(element); // Otherwise, returns a nodelist
+		// }
+
+		// var display = document.getElementById('newInput'),
+		// oldDis = document.getElementById('oldInput'),
+		// oldNum, newNum = "",
+		// operator, result,
+		// btns = el('.calcBtn');
+
+
+		// function updateDisplay (result, old = ""){
+		// 	display.innerHTML = result;
+
+		// 	oldDis.innerHTML = old;
+		// }
+		
+		// function btnclick (id){		
+		// 	//console.log(id);
+		// 	var btnClass = document.getElementById(id).className;
+
+		// 	switch (btnClass) {
+		// 		case "numberButton":
+		// 		numberButton(id);
+		// 		break;
+
+		// 		case "operatorButton":
+		// 		operatorButton(id);
+		// 		break;
+
+		// 		case "specialButton":
+		// 		specialButton(id);
+		// 		break;
+
+		// 		case "equalsButton":
+		// 		equals();
+		// 		break;
+
+		// 		case "clearButton":
+		// 		clear(id);
+		// 		break;
+		// 	}
+		// }
+
+		// function numberButton (id) {
+		// 	var num = id.charAt(2);
+		// 	newNum += num;
+
+		// 	if (oldDis.innerHTML != "") {
+		// 		updateDisplay(newNum, oldDis.innerHTML);
+		// 	}
+		// 	else {
+		// 		updateDisplay(newNum);
+		// 	}
+		// }
+
+		// function operatorButton (id) {
+		// 	oldNum = newNum;
+		// 	newNum = "";
+		// 	operator = id;
+		// 	var opSign = document.getElementById(id).value;
+
+		// 	//delete result;
+		// 	if (result) {
+		// 		oldNum = result;
+		// 	}
+
+		// 	var oldStr = oldNum + " " + opSign;
+
+		// 	updateDisplay(oldNum, oldStr);
+
+		// }
+
+		// function clear (id) {
+		// 	switch(id) {
+		// 		case "clr1":
+		// 		newNum = newNum.substring(0, newNum.length - 1);
+		// 		break;
+
+		// 		case "clr2":
+		// 		newNum = "";
+		// 		break;
+
+		// 		case "clr3":
+		// 		oldNum = "";
+		// 		newNum = "";
+		// 		break;
+		// 	}
+
+		// 	updateDisplay(newNum);
+		// }
+
+		// function equals () {
+
+		// 	oldNum = parseFloat(oldNum);
+		// 	newNum = parseFloat(newNum);
+
+		// 	if (operator == undefined) {
+				
+		// 	}
+
+		// 	else {
+		// 		switch (operator) {
+		// 			case "plus":
+		// 			result = oldNum + newNum;
+		// 			break;
+
+		// 			case "minus":
+		// 			result = oldNum - newNum;
+		// 			break;
+
+		// 			case "times":
+		// 			result = oldNum * newNum;
+		// 			break;
+
+		// 			case "divide":
+		// 			result = oldNum / newNum;
+		// 			break;
+
+		// 			case "modulus":
+		// 			result = oldNum % newNum;
+		// 			break;
+
+		// 			// If equal is pressed without an operator, keep number and continue
+		// 			default:
+		// 			result = newNum;
+		// 			delete operator;
+		// 		}
+
+		// 		updateDisplay(result, result);
+		// 		operator = undefined;
+		// 		newNum = "";
+		// 	}
+
+
+		// 	//console.log("Old = " + oldNum + "\nOp = " + operator + "\nNew = " + newNum + "\nResult = " + result)
+
+		// }
+		
+		// function specialCalc () {
+		// 	if (newNum) {
+		// 		return newNum;
+		// 	}
+		// 	else {
+		// 		return result;
+		// 	}
+		// }
+
+		// function toDegrees (angle) {
+		// 	return angle * (180 / Math.PI);
+		// }
+
+		// function specialButton (id) {
+		// 	var calc = specialCalc();
+
+		// 	switch(id) {
+		// 		case "sqrt-root":
+		// 		result = Math.sqrt(calc);
+		// 		break;
+
+		// 		case "square":
+		// 		result = (calc * calc);
+		// 		break; 
+
+		// 		case "reciproc":
+		// 		result = 1/calc;
+		// 		break;
+
+		// 		case "factorial":
+		// 		var number = 1;
+				
+		// 		if (calc === 0) {
+		// 			result = "0";
+		// 		} else if (calc < 0) {
+		// 			result = "Error";
+		// 		} else {
+		// 			var number = 1;
+		// 			for (var i = calc; i > 0; i--){
+		// 				number *= i;
+		// 			}
+		// 			result = number;
+		// 		}
+
+		// 		case "pi":
+		// 		result = calc * Math.PI;
+		// 		break;
+
+		// 		case "sin":
+		// 		result = Math.sin(calc * (Math.PI / 180));
+		// 		break;
+
+		// 		case "cos":
+		// 		result = Math.cos(calc * (Math.PI / 180));
+		// 		break;
+
+		// 		case "tan":
+		// 		result = Math.tan(calc * (Math.PI / 180));
+		// 		break;
+
+		// 		case "sin-inv":
+		// 		//result = Math.asin(calc * (Math.PI / 180));
+		// 		result = Math.asin(calc);
+		// 		break;
+
+		// 		case "cos-inv":
+		// 		result = Math.acos(calc * (Math.PI / 180));
+		// 		break;
+
+		// 		case "tan-inv":
+		// 		result = Math.atan(calc * (Math.PI / 180));
+		// 		break;
+
+		// 		case "log":
+		// 		result = Math.log10(calc);
+		// 		break;
+
+		// 		case "log-In":
+		// 		result = Math.log(calc);
+		// 		break;
+
+		// 		case "exp":
+		// 		result = Math.exp(calc);
+		// 	}
+
+		// 	updateDisplay(result);
+		// 	newNum = "";
+
+		// }
+
+	</script>
+
+</body>
+</html>

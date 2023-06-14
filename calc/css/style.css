@@ -1,0 +1,68 @@
+@font-face {
+	font-family: 'Calculator';
+	font-style: normal;
+	font-weight: 400;
+	src: url(../fonts/calculator.ttf);
+}
+
+body {
+	padding: 100px;
+}
+
+h1 {
+	text-align: center;
+}
+
+#calculator {
+	display: block;
+	margin: 0 auto;
+	max-width: 900px;
+}
+
+#led {
+	height: 100px;
+	background: #0606060a;
+	margin-bottom: 30px;
+	padding: 5px 5px 0;
+	font-size: 40px;
+	text-align: right;
+	font-family: 'Calculator';
+}
+
+#oldInput {
+	height: 35px;
+	font-size: 25px;
+}
+
+.buttonRow {
+	display: flex;
+}
+
+.buttonPanel {
+	width: 50%;
+}
+
+@media (max-width: 767px) {
+	.buttonRow {
+		display: block;
+	}
+
+	.buttonPanel {
+		width: auto;
+	}
+}
+
+.numberButton,
+.clearButton,
+.operatorButton,
+.specialButton,
+.equalsButton {
+	text-align: center;
+	width: 75px;
+	padding: 10px 10px;
+	margin: 2px 0;
+}
+
+#no0 {
+	width: 154px;
+}

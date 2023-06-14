@@ -1,0 +1,270 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Chisom Calculator</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/png"  href="logochisom.png">
+
+        <style>
+            @font-face {
+                font-family: mons;
+                src: url(montserrat/Montserrat-Bold.ttf);
+            }
+            @font-face {
+                font-family: cal;
+                src: url(montserrat/calculator.ttf);
+            }
+            body{
+                background: url("Background.png") no-repeat center center fixed;
+                background-size: cover;
+                font-family: mons;
+                font-size: 18px;
+                
+            }
+            .container{
+                position:relative;
+                font-family: mons;
+                display: -webkit-flex;
+                display: flex;
+                justify-content: center;
+                background: linear-gradient(146.71deg, #EFCB68 -12.42%, rgba(239, 203, 104, 0) 80%);
+                width: 355px;
+                height: 692px;
+                box-shadow: 0px 6px 6px rgba(0,0,0,0.25);
+                margin-top: 45px;
+                border-radius: 33px;
+            }
+            .inner_container{
+                position: absolute;
+                top:0px;
+                left:20px;
+                background-color: #ffffff;
+                border:3px solid #160c28;
+                border-radius: 33px;
+                box-sizing: border-box;
+                /* width: 335px;
+                height: 535px; */
+                margin-top: 9px;
+            }
+            .result{
+
+                font-family: cal;
+                color: #160c28;
+                font-size: 41px;
+                width:311px;
+                height: 111px;
+                box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+                border-radius: 33px;
+                
+                margin-top: 12px;
+                text-align: right;
+                box-sizing: border-box;
+            }
+            .history{
+                text-align: right;
+                height: 25px;
+                margin: 0px 20px;
+                padding-top: 3px;
+                font-size: 20px;
+            }
+    
+            .output{
+                text-align: right;
+                height:50px;
+                margin: 5px 20px;
+                font-size: 35px;
+            }
+            .value{
+                font-family: cal;
+                border: 0px;
+                margin-top: 7px;
+                text-align: right;
+                width: 265px;
+                font-size: 20px;
+            }
+            .ovalue{
+                font-family: cal;
+                border-width: 0px;
+                margin-top: 15px;
+                text-align: right;
+                width: 265px;
+                font-size: 35px;
+            }
+            .button_row{
+                margin-top: 9px;
+                padding: 6px;
+            }
+            .button_row button{
+                text-align: center;
+                font-family: mons;
+                color: #ffffff;
+                border-radius:23px;
+                border-width:1px;
+                box-shadow: 0px 1px 1px rgba(0,0,0,0.25);
+                width:56px;
+                height: 35px;
+                padding: 4px;
+                font-size: 17px;
+                background-color: #160c28;
+                
+                
+            }
+
+            .row{
+                display: flex;
+                -webkit-flex-direction: column;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+            .button_row button:hover{
+                cursor: pointer;
+                box-shadow: 0px 6px 7px rgba(0,0,0,0.25);
+                -o-transition:.5s;
+                -ms-transition:.5s;
+                -moz-transition:.5s;
+                -webkit-transition:.5s;
+                transition: .5s;
+            }
+            button:onclick{
+                box-shadow: inset 0px 8px 8px rgba(0,0,0,0.25);
+                -o-transition:.5s;
+                -ms-transition:.5s;
+                -moz-transition:.5s;
+                -webkit-transition:.5s;
+                transition: .5s;
+                border: 0px
+            }
+            form{
+                margin: 0px;
+                padding: 0px
+            }
+
+
+        </style>
+        <script>
+            // function every_click(a){
+
+            //     document.getElementById("display").value += a;
+            // }    &#8723;
+
+            // function back(){
+            //     var prevalue = document.getElementById("display").value;
+            //     document.getElementById("display").value=prevalue.substr(0,prevalue.length-1);
+            // }
+
+            // function ear(){
+            //     document.getElementById("display").value = "";
+            // }
+            
+            // function sine(){
+            //     var calc = document.getElementById("display").value;
+            //     document.getElementById("display").value = Math.sin(calc * (Math.PI / 180));
+            // }
+            // function cosine(){
+            //     var calc = document.getElementById("display").value;
+            //     document.getElementById("display").value = Math.cos(calc * (Math.PI / 180));
+            // }
+            // function tan(){
+            //     var calc = document.getElementById("display").value;
+            //     document.getElementById("display").value = Math.tan(calc * (Math.PI / 180));
+            // }
+            
+            // function tan(){
+            //     var calc = document.getElementById("display").value;
+            //     document.getElementById("display").value = Math.tan(calc * (Math.PI / 180));
+            // }
+            // function square(){
+            //     document.getElementById("display").value = Math.pow(document.getElementById("display").value,2);
+            // }
+            // function sqrt(){
+            //     document.getElementById("display").value = Math.pow(document.getElementById("display").value,1/2);
+            // }
+        </script>
+    <!-- <script src="./index.js"></script> -->
+</head>
+
+
+<body>
+    <center>
+        <div class="container">
+            <div class="inner_container">
+                <!-- <form name="calc">
+                <input type="text" name="display" placeholder="0" id="display" value="">
+            </form> -->
+                <div class=" result">
+                    <div class="history" >
+
+                        <p id="history-value"></p>
+                    </div>
+
+                    <div class="output">
+                        <p id="output-value"></p>
+                    </div>
+                </div>
+                <div class="row">
+                <div class="button_row">
+                    <button onclick=""  class="special" id="abs" value="abs">abs</button>
+                    <button onclick=""  class="special" id="sin" value="sin">sin</button>
+                    <button onclick="" class="special" id="cos" value="cos">cos</button>
+                    <button onclick=""  class="special" id="tan" value="tan">tan</button>
+                    <button onclick=""  class="special" id="log" value="log">log</button>
+                </div><br>
+                
+                <div class="button_row">
+                    <button onclick="sqrt()"  class="special" id="sqrt" value="sqrt">&radic;</button>
+                    <button onclick=""  class="special" id="sinh" value="sinh">sinh</button>
+                    <button onclick=""  class="special" id="cosh" value="cosh">cosh</button>
+                    <button onclick=""  class="special" id="tanh" value="tanh">tanh</button>
+                    <button onclick=""  class="special" id="ceil" value="ceil">ceil</button>
+                </div><br>
+
+                <div class="button_row">
+                    <button onclick=""  class="special" id="percent" value="percent">%</button>
+                    <button onclick="square()"  class="special" id="square" value="square">^2</button>
+                    <button onclick=""  class="operator" id="%" value="%">mod</button>
+                    <button onclick="factorial()"  class="special" id="factorial" value="factorial">n!</button>
+                    <button onclick="inverse()"  class="special" id="inverse" value="1/x">1/x</button>
+                </div><br>
+
+                <div class="button_row">
+                    <button onclick="" class="number" id="7">7</button>
+                    <button onclick="" class="number" id="8">8</button>
+                    <button onclick="" class="number" id="9">9</button>
+                    <button onclick=""  class="operator" id="delete" >DEL</button>
+                    <button onclick=""  class="operator" id="clear">AC</button>
+                </div><br>
+
+                <div class="button_row">
+                    <button onclick="" class="number" id="4">4</button>
+                    <button onclick="" class="number" id="5">5</button>
+                    <button onclick="" class="number" id="6">6</button>
+                    <button onclick=""  class="operator" id="-" >-</button>
+                    <button onclick=""  class="operator" id="+" >+</button>
+                </div><br>
+                
+                <div class="button_row">
+                    <button onclick="" class="number" id="1">1</button>
+                    <button onclick="" class="number" id="2">2</button>
+                    <button onclick="" class="number" id="3">3</button>
+                    <button onclick=""  class="operator" id="*" >&times;</button>
+                    <button onclick=""  class="operator" id="/" >/</button>
+                </div><br>
+                    
+                <div class="button_row">
+                    <button onclick="" class="number" id="0">0</button>
+                    <button onclick="exp()" class="special" id="exp">exp</button>
+                    <button onclick="" class="operator" id="dot">.</button>
+                    <button onclick="pie()" class="special" id="pie">&Pi;</button>
+                    <button onclick="" class="operator" id="=" >=</button>
+                </div><br>
+            
+            </div>
+        
+            </div>
+        </div>
+        </center>
+    
+        <script src="index.js"></script>
+    </body>
+</html>

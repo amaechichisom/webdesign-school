@@ -1,0 +1,41 @@
+/* @media(min-width: 769px){
+	.container,.mnav{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+}
+@media(min-width: 1025px){
+	.container{
+		display: flex;
+		justify-content: space-between;
+	}
+} */
+@import url('https://fonts.googleapis.com/css?family=Merriweather');
+
+@media (max-width: 860px) {
+	.mnav {
+		flex-direction: column;
+	}
+
+	.mnav li {
+		margin: 10px 0;
+	}
+	.subscribe{
+		font-size: 18px;
+	}
+	.media{
+		font-size: 18px;
+	}
+	.subscribe p{
+		font-size: 14px;
+	}
+	.media p{
+		font-size: 14px;
+	}
+}
+@font-face{
+	font-family: montserrat;
+	src:url(../font/montserrat/Montserrat-Regular.ttf);
+}

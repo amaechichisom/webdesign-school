@@ -1,0 +1,78 @@
+#container {
+    background-color: #ce5252e5;
+    height: 450px;
+    width: 300px;
+    border-radius: 8px;
+    position: relative;
+    top: 100px;
+    left: 40%;
+
+}
+.screen{
+    background-color: #7a7979;
+    width: 270px;
+    height: 60px;
+    position: relative;
+    top: 20px;
+    left: 15px;
+    
+}
+.srcgrp {
+    border-bottom: 2px solid #ffffff;
+    position: relative;
+    left: 2px;
+    top: 3px;
+    height: 56px;
+    width: 266px;
+    color: white;
+    background-color: #3b3b39b2;
+    font-size: 25px;
+    text-align: right;
+
+}
+
+
+.screen label{
+    position: relative;
+    left: 2px;
+    top: 3px;
+    height: 56px;
+    width: 266px;
+    color: white;
+    background-color: #3b3b39b2;
+    font-size: 25px;
+    text-align: right;
+}
+.btns {
+    position: relative;
+    top: 30px;
+    left: 15px;
+}
+.button {
+    width: 40px;
+    height: 30px;
+    border: none;
+    border-radius: 7px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.button.black {
+    color: white;
+    background-color: black;
+    border-bottom: 2px solid #777575; 
+    border-top: 2px black;
+    font-size: 10px;
+}
+.button.gold {
+    color: balck;
+    background-color: white;
+    border-bottom: 2px solid black;
+}
+.button.red {
+    color: white;
+    background-color: red;
+}
+
+p {
+    line-height: 20px;
+}

@@ -1,0 +1,14 @@
+@media(min-width: 769px){
+	.container,.mnav{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+}
+@media(min-width: 1025px){
+	.container{
+		display: flex;
+		justify-content: space-between;
+	}
+}
